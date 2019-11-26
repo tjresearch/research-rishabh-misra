@@ -2,6 +2,8 @@
 from pyzbar import pyzbar
 import argparse
 import cv2
+from subprocess import call
+from barcodelookup import lookup # File that I made where I implemented barcode lookup
  
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -28,12 +30,15 @@ for barcode in barcodes:
 	barcodeType = barcode.type
  
 	# draw the barcode data and barcode type on the image
-	text = "{} ({})".format(barcodeData, barcodeType)
+	productname = lookup(barcodeData)
+	text = "{} ({})".format(productname, barcodeData)
 	cv2.putText(image, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX,
 		0.5, (0, 0, 255), 2)
- 
+	print(productname)
 	# print the barcode type and data to the terminal
-	print("[INFO] Found {} barcode: {}".format(barcodeType, barcodeData))
+
+	# print("[INFO] Found {} barcode: {}".format(barcodeType, barcodeData))
+
  
 # show the output image
 #print("hello1")
