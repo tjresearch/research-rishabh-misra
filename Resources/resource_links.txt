@@ -1,0 +1,10 @@
+https://cloud.google.com/vision/docs/detecting-logos
+
+https://www.pyimagesearch.com/2018/05/21/an-opencv-barcode-and-qr-code-scanner-with-zbar/
+
+https://realpython.com/flask-connexion-rest-api/
+
+https://realpython.com/api-integration-in-python/
+
+https://www.pyimagesearch.com/2016/02/08/opencv-shape-detection/
+
