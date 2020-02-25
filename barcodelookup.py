@@ -7,9 +7,9 @@ import sys
 def lookup(productid):
     lookupurl = 'https://api.upcdatabase.org/product/'+ productid +'?apikey=4C581A903B39142996356BF57FE06171'
 
-    resp = requests.get(lookupurl)
+    resp = requests.get(lookupurl, verify=False)
 
     if(resp.json()['success']):
-        return resp.json()['title']  # Will return the title of the item it finds
+        return resp.json()['description']  # Will return the title of the item it finds
     
     return None

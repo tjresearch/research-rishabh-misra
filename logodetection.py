@@ -30,7 +30,7 @@ def implicit():
     print(buckets)
 
 # implicit()
-path = "./FoodImages/peas.png"
+path = "./WinterGoalTests/cheetos.jpg"
 detect_logos(path)
 # Imports the Google Cloud client library
 
