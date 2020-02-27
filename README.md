@@ -1,4 +1,4 @@
-# Smart Pantry
+# PantrEYE: Developing a Smart Pantry Using Computer Vision and Smart Processing
 ###### A TJHSST Computer Systems Lab Senior Research Lab Project // Rishabh Misra; Period 2 Syslab 2019-2020
 
 ## Project Overview
