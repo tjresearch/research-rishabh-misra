@@ -20,7 +20,7 @@ from barcodelookup import lookup
 # construct the argument psarser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
-	help="path to input image")
+    help="path to input image")
 args = vars(ap.parse_args())
 
 # load the input image
@@ -39,19 +39,19 @@ for barcode in barcodes:
     (x, y, w, h) = barcode.rect
     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
-	# the barcode data is a bytes object so if we want to draw it on
-	# our output image we need to convert it to a string first
+    # the barcode data is a bytes object so if we want to draw it on
+    # our output image we need to convert it to a string first
     barcodeData = barcode.data.decode("utf-8")
     barcodeType = barcode.type
 
-	# draw the barcode data and barcode type on the image
-	# barcodeData = barcodeData[1:]
+    # draw the barcode data and barcode type on the image
+    # barcodeData = barcodeData[1:]
     productname = lookup(barcodeData)
     text = "{} ({})".format(productname, barcodeData)
     cv2.putText(image, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX,
-		0.5, (0, 0, 255), 2)
+        0.5, (0, 0, 255), 2)
     #print(productname)
-	# print the barcode type and data to the terminal
+    # print the barcode type and data to the terminal
     pantryfoods.append(barcode)
     print("[INFO] Found {} barcode: {}".format(barcodeType, barcodeData))
 for product in pantryfoods:
@@ -61,7 +61,7 @@ for product in pantryfoods:
 # print("hello1")
 print()
 
-GOOGLE_APPLICATION_CREDENTIALS="C:/Users/rmisr/Downloads/LogoDetection-4f4b8a3b6759.json"
+print("----- LOGO DETECTION -----")
 
 def detect_logos(path):
     """Detects logos in the file."""
